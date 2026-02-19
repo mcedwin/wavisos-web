@@ -11,7 +11,7 @@ $routes->get('simular', 'Simulador::index');
 $routes->get('simular/enviar/(:segment)', 'Simulador::enviar/$1');
 $routes->get('enviar', 'WhatsApp::enviar');
 
-$routes->post('webhook2', 'WOtro::webhook');
+$routes->post('webhook', 'WOtro::webhook');
 
 $routes->get('api/regiones/(:num)', 'Api\Ubicacion::regiones/$1');
 $routes->get('api/ciudades/(:num)', 'Api\Ubicacion::ciudades/$1');
