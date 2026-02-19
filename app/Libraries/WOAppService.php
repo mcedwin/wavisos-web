@@ -4,7 +4,7 @@ namespace App\Libraries;
 
 use App\Models\UsuariosModel;
 use App\Models\IntencionesModel;
-use App\Models\DirectorioModel;
+use App\Models\AnuncioModel;
 use App\Models\ReportesModel;
 
 class WOAppService
@@ -17,7 +17,7 @@ class WOAppService
   {
     $this->users = new UsuariosModel();
     $this->ints = new IntencionesModel();
-    $this->anuncios = new DirectorioModel();
+    $this->anuncios = new AnuncioModel();
     $this->reportes = new ReportesModel();
 
 
