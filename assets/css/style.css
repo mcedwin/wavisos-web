@@ -1,0 +1,78 @@
+@media (min-width: 768px) {
+  .container {
+    max-width: 650px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 870px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 900px;
+  }
+}
+body {
+  background-image: linear-gradient(to bottom right, #e0f3ff, #ecfdf5);
+}
+
+
+
+
+.nbrand {
+  font-weight: bold;
+  color: #198754;
+  text-decoration: none;
+}
+
+.nbrand:hover {
+  color: #222;
+}
+.nbrand span {
+  color: #222;
+}
+
+.categorias a {
+  color: #333;
+  text-decoration: none;
+}
+.categorias a:hover {
+  
+}
+.categorias li.active{
+}
+.categorias li.active a{
+  font-weight: bold;
+}
+.categorias .cate-title {
+  font-weight: bold;
+}
+
+.categorias .list-subc li a {
+  display: inline-block;
+  margin: 0 2px 2px 0;
+  padding: 2px;
+}
+.categories .accordion-body {
+  max-height: 350px;
+  overflow-y: auto;
+}
+.link-content {
+  position: relative;
+}
+.link-content .options {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+
+/* Cambiar color del borde e ícono cuando se hace foco */
+.input-group:focus-within .input-group-text {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+.input-group:focus-within .form-control {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
