@@ -106,7 +106,7 @@ class Home extends BaseController
 
     $usuamodel = new UsuariosModel();
     // 3. Actualizar donde el teléfono coincida
-    $phone = session()->userdata('user_phone');
+    $phone = session('user_phone');
     if(!empty($phone)) $usuamodel->where('telefono', $phone)->set($data)->update();
 
     return redirect()->to($url);
