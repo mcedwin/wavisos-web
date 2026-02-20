@@ -19,11 +19,11 @@ class Home extends BaseController
   {
     $session = session();
     $phone = $this->request->getGet('phone');
-die($phone);
+
     session()->set('user_phone', $phone);
 
     // Si ya detectamos antes
-    if ($session->has('location')) {
+    if ($session->has('location')&&!empty($phone)) {
       return redirect()->to($session->get('location_route'));
     }
 
