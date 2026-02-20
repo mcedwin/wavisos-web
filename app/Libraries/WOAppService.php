@@ -42,7 +42,7 @@ Cuando lo envíes, lo revisaré y lo publicaré para que otros puedan verlo 🔎
       ['cod' => '8', 'sid' => '8️⃣ 🚫', 'opcion' => 'Desuscribirme', 'intencion' => 'desuscribirse', 'campos' => ['contenido'], 'ejemplo' => ''],
     ];
   }
-  
+
   public function prueba()
   {
     $this->enviarWhatsApp('51951939876', $this->menuPrincipal('Hola'));
@@ -51,6 +51,15 @@ Cuando lo envíes, lo revisaré y lo publicaré para que otros puedan verlo 🔎
   public function webhook($json)
   {
     $num = $json['from'];
+
+    $filtros = ['931254046','999955555','947010915','994724912','925203545','980834252','971075752','944481223','974207515','969369185','994782535','991627739','983638388','946703874','908798482','929943909','930493411','969060296','970366959','934448000','966769793'];
+
+    foreach ($filtros as $filtro) {
+      if (strpos($num, $filtro) !== false) {
+        return;
+      }
+    }
+
     $texto = trim($json['body']);
 
     if (!$this->users->where('telefono', $num)->first()) {
@@ -122,7 +131,6 @@ Cuando lo envíes, lo revisaré y lo publicaré para que otros puedan verlo 🔎
     if ($result === FALSE) {
       //return $this->response->setJSON(['status' => 'error', 'message' => 'No se pudo conectar a la API']);
     }
-
   }
 
   public function enviar($telefono, $mensaje)
