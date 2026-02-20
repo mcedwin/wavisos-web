@@ -142,7 +142,7 @@ class Home extends BaseController
     $datos['pais'] = $pais['nombre'];
     $datos['region'] = $region['nombre'];
     $datos['ciudad'] = $ciudad['nombre'];
-    $phone = session()->userdata('user_phone');
+    $phone = session('user_phone');
     $datos['telefono']  = $phone;
     $datos['pais_id'] = $pais_id;
     $datos['region_id'] = $region_id;
