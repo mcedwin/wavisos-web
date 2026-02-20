@@ -23,7 +23,7 @@ class Home extends BaseController
     session()->set('user_phone', $phone);
 
     // Si ya detectamos antes
-    if ($session->has('location')&&!empty($phone)) {
+    if ($session->has('location')&&empty($phone)) {
       return redirect()->to($session->get('location_route'));
     }
 
