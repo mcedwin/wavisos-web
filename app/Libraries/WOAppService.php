@@ -302,10 +302,10 @@ Lista de categorías:
     if ($int == 'anuncio') {
       $cates = $this->getcate($d['contenido']);
 
-      $this->anuncios->insert(['numero' => $num, 'titulo' => $cates->titulo_sugerente, 'contenido' => $d['contenido'], 'tipo' => 'temporal', 'idCate' => $cates->categoria, 'fechareg' => date('Y-m-d H:i:s'), 'fechapub' => date('Y-m-d H:i:s'), 'fechafin' => date('Y-m-d H:i:s', time() + 24 * 3 * 60 * 60)]);
+      $this->anuncios->insert(['numero' => $num, 'titulo' => $cates->titulo_sugerente, 'descripcion' => $d['contenido'], 'categoria_id' => $cates->categoria, 'fecha_publicacion' => date('Y-m-d H:i:s')]);
       $id = $this->anuncios->getInsertID();
       return "📢 ¡Tu anuncio ha sido publicado con éxito!
-🔗 Puedes verlo en la web: https://WAVISOS.com/item-" . $id . "
+🔗 Puedes verlo en la web: https://wavisos.com/item-" . $id . "
 💬 Además, también puede ser consultado directamente en este chat de WhatsApp";
     }
     if ($int == 'clima') {
