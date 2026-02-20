@@ -23,6 +23,7 @@
       <strong id="currentLocation">
         <?php echo $ciudad ?>, <?php echo $region ?>, <?php echo $pais ?>
       </strong>
+      <span><?php echo $telefono; ?></span>
     </div>
     <button class="btn btn-sm btn-outline-secondary change-btn"
       data-bs-toggle="modal"

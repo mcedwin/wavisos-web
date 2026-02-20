@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\AnuncioModel;
 use App\Services\GeoService;
 use App\Models\CiudadModel;
+use App\Models\UsuariosModel;
 
 class Home extends BaseController
 {
@@ -17,6 +18,9 @@ class Home extends BaseController
   public function index()
   {
     $session = session();
+    $phone = $this->request->getGet('phone');
+
+    session()->set('user_phone', $phone);
 
     // Si ya detectamos antes
     if ($session->has('location')) {
@@ -35,13 +39,24 @@ class Home extends BaseController
 
     // Buscar ciudad en base de datos
     $ciudad = $ciudadModel
-      ->select('ciudades.slug as ciudad_slug, regiones.slug as region_slug, paises.codigo_iso')
+      ->select('ciudades.slug as ciudad_slug, regiones.slug as region_slug, paises.codigo_iso,ciudades.pais_id,ciudades.region_id, ciudades.id as ciudad_id')
       ->join('regiones', 'regiones.id = ciudades.region_id')
       ->join('paises', 'paises.id = regiones.pais_id')
       ->where('ciudades.nombre', $location['city'])
       ->first();
 
     if ($ciudad) {
+
+      $data = [
+        'pais_id'   => $ciudad['pais_id'],
+        'region_id' => $ciudad['region_id'],
+        'ciudad_id' => $ciudad['ciudad_id'],
+      ];
+
+
+      $usuamodel = new UsuariosModel();
+      // 3. Actualizar donde el teléfono coincida
+      $usuamodel->where('telefono', $phone)->set($data)->update();
 
       $route = '/' .
         strtolower($ciudad['codigo_iso']) . '/' .
@@ -65,7 +80,8 @@ class Home extends BaseController
       ->select('
             paises.codigo_iso,
             regiones.slug AS region_slug,
-            ciudades.slug AS ciudad_slug
+            ciudades.slug AS ciudad_slug,
+            ciudades.pais_id,ciudades.region_id, ciudades.id as ciudad_id
         ')
       ->join('regiones', 'regiones.id = ciudades.region_id')
       ->join('paises', 'paises.id = regiones.pais_id')
@@ -80,6 +96,18 @@ class Home extends BaseController
       strtolower($data['codigo_iso']) . '/' .
       $data['region_slug'] . '/' .
       $data['ciudad_slug'];
+
+    $datau = [
+      'pais_id'   => $data['pais_id'],
+      'region_id' => $data['region_id'],
+      'ciudad_id' => $data['ciudad_id'],
+    ];
+
+
+    $usuamodel = new UsuariosModel();
+    // 3. Actualizar donde el teléfono coincida
+    $phone = session()->userdata('user_phone');
+    if(!empty($phone)) $usuamodel->where('telefono', $phone)->set($data)->update();
 
     return redirect()->to($url);
   }
@@ -114,6 +142,8 @@ class Home extends BaseController
     $datos['pais'] = $pais['nombre'];
     $datos['region'] = $region['nombre'];
     $datos['ciudad'] = $ciudad['nombre'];
+    $phone = session()->userdata('user_phone');
+    $datos['telefono']  = $phone;
     $datos['pais_id'] = $pais_id;
     $datos['region_id'] = $region_id;
     $datos['ciudad_id'] = $ciudad_id;
@@ -272,7 +302,7 @@ Lista de categorías:
     return json_decode($response);
   }
 
-  
+
 
 
   public function ver($id)
