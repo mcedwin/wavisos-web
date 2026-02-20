@@ -57,6 +57,7 @@ class Home extends BaseController
       $usuamodel = new UsuariosModel();
       // 3. Actualizar donde el teléfono coincida
       $usuamodel->where('telefono', $phone)->set($data)->update();
+      die($phone);
 
       $route = '/' .
         strtolower($ciudad['codigo_iso']) . '/' .
