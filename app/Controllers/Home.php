@@ -19,7 +19,7 @@ class Home extends BaseController
   {
     $session = session();
     $phone = $this->request->getGet('phone');
-
+die($phone);
     session()->set('user_phone', $phone);
 
     // Si ya detectamos antes
@@ -57,7 +57,7 @@ class Home extends BaseController
       $usuamodel = new UsuariosModel();
       // 3. Actualizar donde el teléfono coincida
       $usuamodel->where('telefono', $phone)->set($data)->update();
-      die($phone);
+      
 
       $route = '/' .
         strtolower($ciudad['codigo_iso']) . '/' .
