@@ -36,10 +36,10 @@ Tu número de contacto 📱
 Algún detalle importante (ej: ubicación, disponibilidad, precio si aplica)
 
 Cuando lo envíes, lo revisaré y lo publicaré para que otros puedan verlo 🔎.'],
-      ['cod' => '5', 'sid' => '5️⃣ 🌤️', 'opcion' => 'Configurar ubicación', 'intencion' => 'configurar', 'campos' => ['contenido'], 'ejemplo' => ''],
-      ['cod' => '6', 'sid' => '5️⃣ 🌤️', 'opcion' => 'Consultar el clima', 'intencion' => 'clima', 'campos' => ['contenido'], 'ejemplo' => ''],
-      ['cod' => '7', 'sid' => '6️⃣ 📌', 'opcion' => 'Suscribirse a noticias y eventos', 'intencion' => 'suscribirse', 'campos' => ['contenido'], 'ejemplo' => ''],
-      ['cod' => '8', 'sid' => '7️⃣ 🚫', 'opcion' => 'Desuscribirme', 'intencion' => 'desuscribirse', 'campos' => ['contenido'], 'ejemplo' => ''],
+      ['cod' => '5', 'sid' => '5️⃣ 📍', 'opcion' => 'Configurar ubicación', 'intencion' => 'configurar', 'campos' => ['contenido'], 'ejemplo' => ''],
+      ['cod' => '6', 'sid' => '6️⃣ 🌤️', 'opcion' => 'Consultar el clima', 'intencion' => 'clima', 'campos' => ['contenido'], 'ejemplo' => ''],
+      ['cod' => '7', 'sid' => '7️⃣ 📌', 'opcion' => 'Suscribirse a noticias y eventos', 'intencion' => 'suscribirse', 'campos' => ['contenido'], 'ejemplo' => ''],
+      ['cod' => '8', 'sid' => '8️⃣ 🚫', 'opcion' => 'Desuscribirme', 'intencion' => 'desuscribirse', 'campos' => ['contenido'], 'ejemplo' => ''],
     ];
   }
   
