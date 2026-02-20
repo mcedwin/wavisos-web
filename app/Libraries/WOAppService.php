@@ -320,10 +320,10 @@ A partir de ahora recibirás 👉 noticias, eventos y avisos de interés directa
 Si en algún momento deseas dejar de recibirlos, solo selecciona la opción 🚫 Desuscribirme en el menú.';
     }
     if ($int == 'configurar') {
-      return '📍 Para configurar tu ubicación fácilmente,
+      return "📍 Para configurar tu ubicación fácilmente,
 haz clic aquí:
 
-https://wavisos.com/?phone={$num}';
+https://wavisos.com/?phone={$num}";
     }
     if ($int == 'desuscribirse') {
       $this->users->update(['numero' => $num], ['suscrito' => '0']);
