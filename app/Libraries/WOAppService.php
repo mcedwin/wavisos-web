@@ -262,7 +262,7 @@ Lista de categorías:
     // Buscar coincidencias en título o descripción
     $resultados = $this->anuncios
       ->like('titulo', $keyword)
-      ->orLike('contenido', $keyword)
+      ->orLike('descripcion', $keyword)
       ->orderBy('id', 'DESC')
       ->limit(5)
       ->find();
@@ -278,7 +278,7 @@ Lista de categorías:
       $num = $i + 1;
       $mensaje .= "{$num}. *{$row['titulo']}*\n";
       $mensaje .= "📞 {$row['numero']}\n";
-      $mensaje .= "{$row['contenido']}\n\n";
+      $mensaje .= "{$row['descripcion']}\n\n";
     }
 
     $mensaje .= "👉 Estos son los primeros " . count($resultados) . " anuncios encontrados.";

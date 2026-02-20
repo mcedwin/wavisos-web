@@ -173,7 +173,7 @@ class Home extends BaseController
 
     // if (!empty($cate) && $cate != 'todo') $condiciones[] = "categoria_id={$info->cate->cate_id}";
     $condiciones[] = "pais_id='{$pais_id}' AND ciudad_id='{$ciudad_id}'";
-    if (!empty($search))  $condiciones[] = GetQS($search, ['titulo', 'contenido']);
+    if (!empty($search))  $condiciones[] = GetQS($search, ['titulo', 'descripcion']);
 
     $where = count($condiciones) > 0 ? implode(' AND ', $condiciones) : "";
     if (!empty($where)) $this->model->where($where);
