@@ -4,6 +4,6 @@ use CodeIgniter\Model;
 class UsuariosModel extends Model {
   protected $table = 'usuarios';
   protected $primaryKey = 'id';
-  protected $allowedFields = ['numero','created_at','suscrito'];
+  protected $allowedFields = ['telefono','created_at','suscrito'];
   public $timestamps = false;
 }

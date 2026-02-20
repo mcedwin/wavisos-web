@@ -52,8 +52,8 @@ Cuando lo envíes, lo revisaré y lo publicaré para que otros puedan verlo 🔎
     $num = $json['from'];
     $texto = trim($json['body']);
 
-    if (!$this->users->where('numero', $num)->first()) {
-      $this->users->save(['numero' => $num]);
+    if (!$this->users->where('telefono', $num)->first()) {
+      $this->users->save(['telefono' => $num]);
       $this->enviarWhatsApp($num, $this->menuPrincipal('¡👋 ¡Bienvenido! Soy tu asistente por WhatsApp.\nPuedo ayudarte a:'));
       return;
     }
