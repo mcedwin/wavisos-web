@@ -157,6 +157,7 @@ Cuando lo envíes, lo revisaré y lo publicaré para que otros puedan verlo 🔎
     if ($int == 'profesional' && strlen(str_ireplace("Busco Profesional", "", $t)) > 5) $d['contenido'] = $t;
     if ($int == 'directorio' && strlen(str_ireplace("Consultar Directorio", "", $t)) > 5) $d['contenido'] = $t;
     if ($int == 'anuncio' && strlen($t) > 40) $d['contenido'] = $t;
+    if ($int == 'configurar') $d['contenido'] = '.';
     if ($int == 'clima') $d['contenido'] = '.';
     if ($int == 'suscribirse') $d['contenido'] = '.';
     if ($int == 'desuscribirse') $d['contenido'] = '.';
