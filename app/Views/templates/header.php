@@ -30,7 +30,7 @@
   <div class="container">
     <div class="d-flex justify-content-between bg-white my-3 p-2 rounded shadow-sm">
       <div class="d-flex align-items-center">
-        <a class="nbrand fs-4 ms-2 mb-1" href="<?php echo base_url() ?>">w<span>Avisos</span></a>
+        <a class="nbrand fs-4 ms-2 mb-1" href="./">w<span>Avisos</span></a>
         <p class="mb-0 ms-3">El clasificado que vive en WhatsApp.</p>
       </div>
 
