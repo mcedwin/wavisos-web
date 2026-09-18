@@ -82,7 +82,7 @@ abstract class BaseController extends Controller
       'title' => $this->title,
       'description' => 'Publica tus anuncios de manera rápida, sencilla y gratuita. Encuentra ofertas, productos y servicios en nuestro tablero de anuncios online. ¡Es fácil y sin costo!',
       'keywords' => 'tablero de anuncios, minianuncios, anuncios gratuitos, publicar gratis, vender productos, servicios online, clasificados, ofertas locales, anuncios online',
-      'image' => base_url('/sys/assets/img/tablero.jpeg'),
+      'image' => base_url('/assets/img/tablero.jpeg'),
       'url' => current_url(),
       'site_name' => 'WAVISOS',
     );
@@ -164,7 +164,7 @@ abstract class BaseController extends Controller
     $strcss = '';
 
     foreach ($this->csss as $css) {
-      $strcss .= '<link href="' . ((preg_match('#^htt#', $css) == TRUE) ? '' : base_url('sys/assets') . '/') . $css . '?v=' . $this->frontVersion . '" rel="stylesheet" type="text/css" media="all" />';
+      $strcss .= '<link href="' . ((preg_match('#^htt#', $css) == TRUE) ? '' : base_url('assets') . '/') . $css . '?v=' . $this->frontVersion . '" rel="stylesheet" type="text/css" media="all" />';
     }
 
     $this->datos['css'] = $strcss;
@@ -179,7 +179,7 @@ abstract class BaseController extends Controller
     $strjs = '';
 
     foreach ($this->jss as $js) {
-      $strjs .= '<script type="text/javascript" src="' . ((preg_match('#^htt#', $js) == TRUE) ? '' : base_url('sys/assets') . '/') . $js . '?v=' . $this->frontVersion . '"></script>';
+      $strjs .= '<script type="text/javascript" src="' . ((preg_match('#^htt#', $js) == TRUE) ? '' : base_url('assets') . '/') . $js . '?v=' . $this->frontVersion . '"></script>';
     }
 
     helper('formulario');

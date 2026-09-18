@@ -7,7 +7,7 @@
 
   <?php if ($config->esenvivo): ?>
     <a data-fancybox href="https://www.youtube.com/embed/<?php echo @id_youtube($config->urlvivo); ?>" class="d-block text-center mt-3">
-      <img src="<?php echo base_url('sys/assets/img/envivo.png'); ?>" alt="" class="img-fluid">
+      <img src="<?php echo base_url('assets/img/envivo.png'); ?>" alt="" class="img-fluid">
     </a>
   <?php endif; ?>
 
@@ -54,7 +54,7 @@
   <div class="card my-3">
     <div class="card-body">
       <a href="http://www.cadenaradiovision.pe/" class="d-block text-center mt-3">
-        <img src="<?php echo base_url('sys/assets/img/inforadio.jpeg'); ?>" alt="" class="img-fluid w-100">
+        <img src="<?php echo base_url('assets/img/inforadio.jpeg'); ?>" alt="" class="img-fluid w-100">
       </a>
     </div>
   </div>

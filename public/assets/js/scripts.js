@@ -8,7 +8,7 @@ $(function () {
     $.gs_loader = $('<div>').hide();
     $.gs_loader.append($('<div>', {
         'class': 'ui-widget-overlay',
-    })).append = ($('<div>').html('<img src="' + base_url + '/sys/assets/img/cubo-loader.gif"/>').css({
+    })).append = ($('<div>').html('<img src="' + base_url + '/assets/img/cubo-loader.gif"/>').css({
         'position': 'fixed',
         'font': 'bold 12px Verdana, Arial, Helvetica, sans-serif',
         'left': '50%',

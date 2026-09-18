@@ -8,11 +8,11 @@
   <meta name="description" content="<?php echo $meta->description ?>" />
   <meta name="keywords" content="<?php echo $meta->keywords ?>" />
   <meta name="robots" content="all" data-rh="" />
-  <link rel="icon" type="image/png" href="<?php echo base_url('/sys/assets/img/favicon.png') ?>">
-  <link rel="stylesheet" href="<?php echo base_url('/sys/assets/lib/bootstrap533/css/bootstrap.min.css') ?>" />
-  <link rel="stylesheet" href="<?php echo base_url('/sys/assets/lib/fontawesome6/css/all.min.css') ?>" />
+  <link rel="icon" type="image/png" href="<?php echo base_url('/assets/img/favicon.png') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/lib/bootstrap533/css/bootstrap.min.css') ?>" />
+  <link rel="stylesheet" href="<?php echo base_url('/assets/lib/fontawesome6/css/all.min.css') ?>" />
   <?php echo $css ?? '' ?>
-  <link href="<?php echo base_url('sys/assets/css/style.css') ?>" rel="stylesheet" media="all">
+  <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" media="all">
 
   <!--  Essential META Tags -->
   <meta property="og:title" content="<?php echo $meta->title ?>">
